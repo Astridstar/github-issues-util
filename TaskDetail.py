@@ -30,4 +30,4 @@ class task_detail:
   
   # =================================================
   def __str__(self):
-    return "[" + str(self.issue_sno) + "]: " + self.title
+    return "\n[" + str(self.issue_sno) + ". " + self.title + " ]\n" + str(self.body) + "\n"
