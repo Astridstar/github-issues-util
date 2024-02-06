@@ -7,20 +7,22 @@ import csv
 #   assignees
 #   label
 
+from TaskDetail import TaskDetail
+
  
 class TasksParser:
   logger = logging.getLogger(__name__)
 
   # =================================================
   def __init__(self):
-    pass
+    self.taskList = list()
 
   # =================================================
   def parse(self, tasksCsvFile):
-    with open('employee_file.csv', mode='w') as employee_file:
-        employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
-        employee_writer.writerow(['John Smith', 'Accounting', 'November'])
-        employee_writer.writerow(['Erica Meyers', 'IT', 'March'])
-  
+    with open(tasksCsvFile, mode='r') as tasks_file:
+        tasks_reader = csv.reader(tasks_file, delimiter=',', quotechar='"')
+        for row in tasks_reader:
+          self.taskList.append(TaskDetail(row[0], row[1], row[2], row[3], row[4], row[5]))
+          # for item in row:
+              
   
