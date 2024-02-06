@@ -6,6 +6,7 @@ import logging
 # from requests.exceptions import HTTPError
 from WorkspaceConfig import workspace_config
 from TasksParser import tasks_parser
+from Project import project
 
 FORMAT = '%(asctime)s - %(message)s'
 logging.basicConfig(format=FORMAT, level=os.environ.get("LOGLEVEL", "DEBUG"))
@@ -29,8 +30,8 @@ if (config_file is None) or (not config_file):
     exit
     
 # Grab the configuration from config file
-workspace_cfg = workspace_config(config_file)          # creating object of HostConfig
-workspace_cfg.read_workspace_config()                            # Reading config file 
+workspace_cfg = workspace_config(config_file)            # creating object of HostConfig
+workspace_cfg.read_workspace_config()                    # Reading config file 
 githubConfig = workspace_cfg.get_github_config_details() # Getting the list of sections (servers)
 localConfig = workspace_cfg.get_local_config_details()   # Getting the list of sections (servers)
 print("githubConfig: ", githubConfig)
@@ -40,6 +41,10 @@ tasksPareser = tasks_parser()
 tasksPareser.parse(localConfig)
 for task in tasksPareser.task_list:
     logger.debug("Issue => %s", task)
+    
+
+gh_project = project(githubConfig) 
+gh_project.update_github_project()
     
 # url = 'https://api.github.com/repos/pcs-devsecops/devOps/issues/210'
 # headers = {'Accept': 'application/vnd.github+json', 
