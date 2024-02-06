@@ -39,9 +39,8 @@ print("localConfig: ", localConfig)
 tasksPareser = TasksParser()
 tasksPareser.parse(localConfig)
 for task in tasksPareser.taskList:
-    print(task.title, "==", task.body, "==", task.labels, "==", task.assignees, "==", task.parents)
-    logger.debug("S/No: %s, Title: %s, Body: %s, Labels: %s, Assignees: %s", task.sno, task.title, task.body, task.labels, task.assignees, task.parents)
-
+    logger.debug("Issue => %s", task)
+    
 # url = 'https://api.github.com/repos/pcs-devsecops/devOps/issues/210'
 # headers = {'Accept': 'application/vnd.github+json', 
 #            'Authorization': f'Bearer {token}',

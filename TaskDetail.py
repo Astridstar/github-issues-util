@@ -7,7 +7,7 @@ class TaskDetail:
 
   # =================================================
   def __init__(self, sno, tile, body, labels, assignees, parents):
-    self.issue_sno=sno.strip()
+    self.issue_sno=sno
     self.issue_id=-1
     self.title=tile.strip()
     self.body=body.strip()
@@ -28,4 +28,6 @@ class TaskDetail:
   def parseParents(self, parents):
     return parents.strip()
   
-  
+  # =================================================
+  def __str__(self):
+    return "[" + str(self.issue_sno) + "]: " + self.title
