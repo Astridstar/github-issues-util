@@ -2,7 +2,7 @@ import logging
 import os
 import csv
 
-class TaskDetail:
+class task_detail:
   logger = logging.getLogger(__name__)
 
   # =================================================
