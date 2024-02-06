@@ -1,0 +1,3 @@
+sno,title,body,labels,assignees,parent
+1, My 2nd issue, This is the 2nd issue that is to be auto created, bug|triage|documentation, wongss,,
+2, My 3rd issue, This is the 3rd issue that is to be auto created, bug,,,
