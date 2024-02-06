@@ -38,7 +38,7 @@ print("localConfig: ", localConfig)
 
 tasksPareser = TasksParser()
 tasksPareser.parse(localConfig)
-for task in tasksPareser.taskList:
+for task in tasksPareser.task_list:
     logger.debug("Issue => %s", task)
     
 # url = 'https://api.github.com/repos/pcs-devsecops/devOps/issues/210'

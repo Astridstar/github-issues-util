@@ -11,21 +11,21 @@ class TaskDetail:
     self.issue_id=-1
     self.title=tile.strip()
     self.body=body.strip()
-    self.labels=self.parseLabels(labels)
-    self.assignees=self.parseAssignees(assignees)
-    self.parents=self.parseParents(parents)
+    self.labels=self.parse_labels(labels)
+    self.assignees=self.parse_assignees(assignees)
+    self.parents=self.parse_parents(parents)
   
   # =================================================
-  def parseLabels(self, labels):
+  def parse_labels(self, labels):
     return labels.strip()
 
   # =================================================
-  def parseAssignees(self, assignees):
+  def parse_assignees(self, assignees):
     return assignees.strip()
     
 
   # =================================================
-  def parseParents(self, parents):
+  def parse_parents(self, parents):
     return parents.strip()
   
   # =================================================

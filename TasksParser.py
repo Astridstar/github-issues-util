@@ -15,14 +15,14 @@ class TasksParser:
 
   # =================================================
   def __init__(self):
-    self.taskList = list()
+    self.task_list = list()
 
   # =================================================
-  def parse(self, tasksCsvFile):
-    with open(tasksCsvFile, mode='r') as tasks_file:
+  def parse(self, tasks_csv_file):
+    with open(tasks_csv_file, mode='r') as tasks_file:
         tasks_reader = csv.reader(tasks_file, delimiter=',', quotechar='"')
         for row in tasks_reader:
-          self.taskList.append(TaskDetail(row[0], row[1], row[2], row[3], row[4], row[5]))
+          self.task_list.append(TaskDetail(row[0], row[1], row[2], row[3], row[4], row[5]))
           # for item in row:
               
   
